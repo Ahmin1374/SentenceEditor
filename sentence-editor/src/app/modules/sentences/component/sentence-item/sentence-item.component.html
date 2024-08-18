@@ -1,0 +1,64 @@
+<ng-container>
+    <ng-container *ngIf=" !(selected$ | async ) ;else editor">
+      
+      <div class="item-container" (click)="openEditor($event)">
+
+        <div class="item-id">{{ item.n }}</div>
+        <div class="item-subject">{{ item.s }}</div>
+        <div class="item-verb">{{ item.v }}</div>
+        <div class="item-object">{{ item.o }}</div>
+       
+      </div>
+
+    </ng-container>
+
+    <ng-template class="container" #editor>
+
+        <div class="item-container selected-item" >
+            
+          <div class="item-id">{{ item.n }}</div>
+          
+            <mat-form-field class="item-verb">
+                <mat-label>{{item.s}}</mat-label>
+                <input matInput #itemSubject>
+            </mat-form-field>
+          
+            <mat-form-field class="item-subject">
+                <mat-label>{{item.v}}</mat-label>
+                <input matInput #itemVerb >
+            </mat-form-field>
+          
+          
+            <mat-form-field class="item-object">
+                <mat-label>{{ item.o }}</mat-label>
+                <input matInput #itemObject>
+            </mat-form-field>
+            
+          
+          <div class="operations">
+        
+            <div class="button-container button-confirm">
+              <button mat-icon-button color="primary" (click)="onSave()">
+                <mat-icon>check_circle_outline</mat-icon>
+              </button>
+            </div>
+
+            <div class="button-container button-delete">
+              <button mat-icon-button color="primary" >
+                <mat-icon>delete_outline</mat-icon>
+              </button>
+            </div>
+
+            <div class="button-container button-confirm">
+              <button mat-icon-button color="primary" (click)="onCancel()">
+                <mat-icon>cancel</mat-icon>
+              </button>
+            </div> 
+
+          </div>
+
+        </div>
+    
+    </ng-template>
+</ng-container>
+

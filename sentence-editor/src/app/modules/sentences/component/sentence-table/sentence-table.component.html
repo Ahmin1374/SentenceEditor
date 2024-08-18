@@ -1,0 +1,29 @@
+  <div class="sentence-content">   
+   
+      <div class="sentence-table-header">
+        
+        <div class="header-cell">No.</div>
+        <div class="header-cell">Subject</div>
+        <div class="header-cell">Verb</div>
+        <div class="header-cell">Object</div>       
+        
+      </div>
+    
+    <ng-container *ngFor="let element of setencesData$ | async">
+      <div class="item-container">
+
+          <sentence-item
+            [item]="element"
+            [selected]=" element.n === (currentSentenceIDToEdit$| async)"
+            
+            (onClick)="startEdit($event,element.n)" 
+            (cancel)="OnCancelEdit()" 
+            (save)="onSave($event)"
+             
+          ></sentence-item>
+      </div>      
+  
+    </ng-container>   
+ 
+  </div>
+  

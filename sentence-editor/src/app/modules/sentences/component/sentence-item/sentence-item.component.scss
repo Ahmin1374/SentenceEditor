@@ -1,0 +1,48 @@
+
+.item-container{
+    background-color: rgba(235, 237, 243, 0.205);
+    display: grid;
+    grid-template-columns:  repeat(4, 150px);
+    grid-gap: 10px;
+    align-content: center;
+    border-radius: 0.6rem  0px 0px .6rem;
+ 
+}
+
+  .item-container > div {
+    padding: 1rem;    
+    
+  }
+
+  .item-container:hover{
+    background-color: #dacfb554;
+   
+  }
+
+  
+
+  .selected-item{
+    background-color: #dacfb554;
+    border-radius: 0rem  20px 20px 0rem;
+    padding: 0px !important;
+    align-self: center;
+    
+    display: grid;
+    grid-template-columns: repeat(5, 150px);
+   
+  }
+
+  .operations{
+    /* position: absolute; */
+    display: flex;
+    /* margin-left: auto;   */
+    flex-direction: row;
+    /* align-items: flex-end ; */
+    
+   
+    background-color: #E8EEF1;
+    border-radius: 0rem  20px 20px 0rem;
+    border-left: 2px dashed white;
+    padding-left: 0px !important;
+    
+  }
